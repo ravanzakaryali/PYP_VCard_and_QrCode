@@ -1,0 +1,36 @@
+﻿@model IEnumerable<User>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row justify-content-between">
+    <h3 class="d-inline w-auto">Users</h3>
+    <button id="btn-db-save" class="btn btn-success d-inline w-auto">
+        Save to database
+    </button>
+</div>
+<div class="row">
+    @foreach (User user in Model)
+    {
+        <div class="col-3 py-2">
+            <div class="card">
+                <img src="@user.QrCodeUrl" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5>@user.FirstName @user.LastName</h5>
+                    <p class="card-text">
+                        <i class="fa-solid fa-map-pin p-2"></i>
+                        @user.Country.Name, @user.City.Name
+                    </p>
+                    <p class="card-text">
+                        <i class="fa-solid fa-envelope p-2"></i>
+                        @user.Email
+                    </p>
+                    <p class="card-text">
+                        <i class="fa-solid fa-phone p-2"></i>
+                        @user.Phone
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

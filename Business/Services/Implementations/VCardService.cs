@@ -18,9 +18,9 @@ public class VCardService : IVCardService
                $"ADR;TYPE#COUNTRY:{user.Country.Name};\r\n" +
                $"END:VCARD";
     }
-    public string QrCodeGenerator(string vcard,int size=300)
+    public string QrCodeGenerator(string vcard, int size = 300)
     {
-        string data =  HttpUtility.UrlEncode(vcard);
+        string data = HttpUtility.UrlEncode(vcard);
         return $"https://chart.googleapis.com//chart?cht=qr&chs={size}x{size}&chl={data}";
     }
 }

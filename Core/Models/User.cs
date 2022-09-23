@@ -13,4 +13,5 @@ public class User : BaseEntity
     public City City { get;set; } = null!;
     public int CountryId { get; set; }
     public Country Country { get; set; } = null!;
+    public string QrCodeUrl { get; set; } = null!;
 }

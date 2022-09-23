@@ -4,6 +4,7 @@ namespace Business.Services.Abstarctions;
 
 public interface IUserService
 {
-    Task<bool> AddUserRangeAsync(List<User> users);
-    Task<List<User>> GetAllUser();
+    Task<bool> DatabaseSaveAsync();
+    Task<List<User>> GetAllUserAsync();
+    Task<List<User>> GetAllUserDbAsync();
 }
